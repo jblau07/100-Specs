@@ -266,7 +266,14 @@ let scmList = ["git", "svn", "mercurial", "bazaar", "cvs"]
  *                  "Golden"
  *
  */
-
+let beers = {
+  IPA: "Ale",
+  Lager: "Strong",
+  Heffeweisen: "German",
+  Stout: ["Thick", "Dark", "Bitter"],
+  Porter: "Bitter",
+  Ale: ["Light", "Golden"]
+}
 
 /* Step 20
  *
@@ -276,6 +283,9 @@ let scmList = ["git", "svn", "mercurial", "bazaar", "cvs"]
  * @return {String}
  *
  */
+function sahara_river () {
+  return 'Nile River'
+}
 
 
 /* Step 21
@@ -288,7 +298,9 @@ let scmList = ["git", "svn", "mercurial", "bazaar", "cvs"]
  * @return {Number}
  *
  */
-
+function addNumbers (num1, num2) {
+  return num1 + num2
+}
 
 /* Step 22
  *
@@ -301,7 +313,9 @@ let scmList = ["git", "svn", "mercurial", "bazaar", "cvs"]
  * @return {Bool}
  *
  */
-
+function installLinux (type) {
+  return linuxFlavors.includes(type)
+}
 
 /* Step 23
  *
@@ -320,6 +334,16 @@ let scmList = ["git", "svn", "mercurial", "bazaar", "cvs"]
  * @return {Bool when False, String when True}
  *
  */
+function drink (type) {
+  if (beers.hasOwnProperty(type)) {
+    if (typeof beers[type] === 'string') {
+      return `This ${type} is ${beers[type]}.`
+    } else {
+      return `This ${type} is ${beers[type].join(` and `)}.`;
+    }
+  } 
+  return false
+}
 
 
 /* Step 24
@@ -333,6 +357,13 @@ let scmList = ["git", "svn", "mercurial", "bazaar", "cvs"]
  * @return {String if true else return false}
  *
  */
+function browseURL (browser) {
+  if (browsers.hasOwnProperty(browser)) {
+    return browsers[browser]
+  } else {
+    return false
+  }
+}
 
 
 /* Step 25
